@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TraceObject : MonoBehaviour
 {
+    public TextLogic TextLogic;
     Vector3 originalPos;
     public GameObject objStartPoint;
     public GameObject objEndPoint;
@@ -28,8 +29,9 @@ public class TraceObject : MonoBehaviour
         }
         if ((Vector3.Distance(transform.position, objEndPoint.transform.position)) < .00001f) {
             hitObjEndPoint = true;
+            TextLogic.IntroTextDisplay();
             // text box
             transform.position = Vector3.Lerp(transform.position, objPlayerPoint.transform.position, 1f);
-        }        
+        }
     }
 }
