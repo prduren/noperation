@@ -30,9 +30,9 @@ public class TextLogic : MonoBehaviour
     }
 
     public void IntroTextDisplay() {
-        canvasText.text = displayText[SM.displayTextIterator];
-        canvasText.enabled = true;        
-        textBackgroundImage.enabled = true;
+        //canvasText.text = displayText[SM.displayTextIterator];
+        //canvasText.enabled = true;        
+        //textBackgroundImage.enabled = true;
         SM.displayTextIterator = SM.displayTextIterator + 1;
     }
 
