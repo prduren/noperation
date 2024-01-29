@@ -17,7 +17,8 @@ public class Trace : MonoBehaviour
         foreach(GameObject obj in objTraceList) {
             objTraceCounter = objTraceCounter + 1;
         }
-        amountToIncrementStatic = 1f/objTraceCounter;
+        objTraceCounter = objTraceCounter + 1; // one more increment to make the distortion NOT 100% on the last objTrace (too loud)
+        amountToIncrementStatic = 1f / objTraceCounter;
     }
 
     // Update is called once per frame
