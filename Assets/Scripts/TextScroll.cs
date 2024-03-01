@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Object = UnityEngine.Object;
@@ -8,19 +9,16 @@ using Object = UnityEngine.Object;
     public class TextScroll : MonoBehaviour
     {
         private TMP_Text _textBox;
-
         // Basic Typewriter Functionality
         private int _currentVisibleCharacterIndex;
         private Coroutine _typewriterCoroutine;
         private bool _readyForNewText = true;
-
         private WaitForSeconds _simpleDelay;
         private WaitForSeconds _interpunctuationDelay;
-
         [Header("Typewriter Settings")] 
         [SerializeField] private float charactersPerSecond = 20;
         [SerializeField] private float interpunctuationDelay = 0.5f;
-
+        public Animator animator;
 
         // Skipping Functionality
         public bool CurrentlySkipping { get; private set; }
@@ -38,12 +36,10 @@ using Object = UnityEngine.Object;
         public static event Action CompleteTextRevealed;
         public static event Action<char> CharacterRevealed;
 
-
         private void Awake()
         {
             _textBox = GetComponent<TMP_Text>();
             _textBox.maxVisibleCharacters = 0;
-
             _simpleDelay = new WaitForSeconds(1 / charactersPerSecond);
             _interpunctuationDelay = new WaitForSeconds(interpunctuationDelay);
             
@@ -92,7 +88,6 @@ using Object = UnityEngine.Object;
         private IEnumerator Typewriter()
         {
             TMP_TextInfo textInfo = _textBox.textInfo;
-
             while (_currentVisibleCharacterIndex < textInfo.characterCount + 1)
             {
                 var lastCharacterIndex = textInfo.characterCount - 1;
@@ -103,6 +98,7 @@ using Object = UnityEngine.Object;
                     yield return _textboxFullEventDelay;
                     CompleteTextRevealed?.Invoke();
                     _readyForNewText = true;
+                    animator.speed = 0;
                     yield break;
                 }
 
