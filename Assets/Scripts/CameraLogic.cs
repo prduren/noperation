@@ -3,14 +3,14 @@ using System.Collections;
 
 public class CameraLogic : MonoBehaviour {
     public Transform target;
-    public Camera camera;
+    public Camera newCamera;
     
     private float initHeightAtDist;
     private bool dzEnabled;
 
     // Calculate the frustum height at a given distance from the camera.
     float FrustumHeightAtDistance(float distance) {
-        return 2.0f * distance * Mathf.Tan(camera.fieldOfView * 0.5f * Mathf.Deg2Rad);
+        return 2.0f * distance * Mathf.Tan(newCamera.fieldOfView * 0.5f * Mathf.Deg2Rad);
     }
 
     // Calculate the FOV needed to get a given frustum height at a given distance.
@@ -38,7 +38,7 @@ public class CameraLogic : MonoBehaviour {
         if (dzEnabled) {
             // Measure the new distance and readjust the FOV accordingly.
             var currDistance = Vector3.Distance(transform.position, target.position);
-            camera.fieldOfView = FOVForHeightAndDistance(initHeightAtDist, currDistance);
+            newCamera.fieldOfView = FOVForHeightAndDistance(initHeightAtDist, currDistance);
         }
         
         // Simple control to allow the camera to be moved in and out using the up/down arrows.

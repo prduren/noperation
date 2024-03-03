@@ -8,6 +8,13 @@ using Object = UnityEngine.Object;
     [RequireComponent(typeof(TMP_Text))]
     public class TextScroll : MonoBehaviour
     {
+
+        string[] textsToDisplay = {
+            "first! woo you did it wow.",
+            "second set of text. did it work?",
+            "placeholder"
+        };
+
         private TMP_Text _textBox;
         // Basic Typewriter Functionality
         private int _currentVisibleCharacterIndex;
@@ -19,6 +26,7 @@ using Object = UnityEngine.Object;
         [SerializeField] private float charactersPerSecond = 20;
         [SerializeField] private float interpunctuationDelay = 0.5f;
         public Animator animator;
+        public SpriteRenderer tvAnimSpriteRenderer;
 
         // Skipping Functionality
         public bool CurrentlySkipping { get; private set; }
@@ -42,6 +50,8 @@ using Object = UnityEngine.Object;
             _textBox.maxVisibleCharacters = 0;
             _simpleDelay = new WaitForSeconds(1 / charactersPerSecond);
             _interpunctuationDelay = new WaitForSeconds(interpunctuationDelay);
+            _textBox.text = textsToDisplay[SM.textsToDisplayIterator];
+            SM.textsToDisplayIterator = SM.textsToDisplayIterator + 1;
             
             _skipDelay = new WaitForSeconds(1 / (charactersPerSecond * skipSpeedup));
             _textboxFullEventDelay = new WaitForSeconds(sendDoneDelay);
@@ -99,6 +109,22 @@ using Object = UnityEngine.Object;
                     CompleteTextRevealed?.Invoke();
                     _readyForNewText = true;
                     animator.speed = 0;
+                    yield return _textboxFullEventDelay;
+                    _textBox.text = textsToDisplay[SM.textsToDisplayIterator];
+                    // TODO: put a blocker in front of the TV when the intro anim is done.
+                    // TODO: then reach into the camera script and zoom out, and begin the rest of the stuff.
+                    Debug.Log(SM.textsToDisplayIterator);
+                    if (SM.textsToDisplayIterator == 2) { // done with intro text, pause intro animation
+                        SM.beginGamePostIntro = true;
+                    }
+                    animator.speed = 1;
+                    if (SM.beginGamePostIntro) {
+                        animator.speed = 0;
+                        // enable TV blocker
+                        tvAnimSpriteRenderer.enabled = false;
+
+                    }
+                    SM.textsToDisplayIterator = SM.textsToDisplayIterator + 1;
                     yield break;
                 }
 
