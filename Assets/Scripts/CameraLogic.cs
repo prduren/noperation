@@ -7,6 +7,9 @@ public class CameraLogic : MonoBehaviour {
     
     private float initHeightAtDist;
     private bool dzEnabled;
+    private float initFieldOfView;
+    public float duration = 1;
+    
 
     // Calculate the frustum height at a given distance from the camera.
     float FrustumHeightAtDistance(float distance) {
@@ -32,6 +35,8 @@ public class CameraLogic : MonoBehaviour {
     
     void Start() {
         StartDZ();
+        // this should be 60
+        initFieldOfView = newCamera.fieldOfView;
     }
 
     void Update () {
@@ -42,6 +47,18 @@ public class CameraLogic : MonoBehaviour {
         }
         
         // Simple control to allow the camera to be moved in and out using the up/down arrows.
-        transform.Translate(Input.GetAxis("Vertical") * Vector3.forward * Time.deltaTime * 28f);
+        // transform.Translate(Input.GetAxis("Vertical") * Vector3.forward * Time.deltaTime * 28f);
+        if (newCamera.transform.position.z > -22f) {
+            transform.Translate(Vector3.back * Time.deltaTime * 28f);
+        }
+        if (newCamera.transform.position.z < -21f) {
+            // newCamera.fieldOfView = initFieldOfView;
+            // newCamera.fieldOfView = Mathf.Lerp(newCamera.fieldOfView, initFieldOfView, t / duration);
+            if (duration < 0){
+                duration = 0.001f;
+            }
+            dzEnabled = false;
+            newCamera.fieldOfView = Mathf.MoveTowards(newCamera.fieldOfView, initFieldOfView, 100f * Time.deltaTime);
+        }
     }
 }
