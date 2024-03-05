@@ -52,13 +52,11 @@ public class CameraLogic : MonoBehaviour {
             transform.Translate(Vector3.back * Time.deltaTime * 28f);
         }
         if (newCamera.transform.position.z < -21f) {
-            // newCamera.fieldOfView = initFieldOfView;
-            // newCamera.fieldOfView = Mathf.Lerp(newCamera.fieldOfView, initFieldOfView, t / duration);
-            if (duration < 0){
-                duration = 0.001f;
-            }
             dzEnabled = false;
             newCamera.fieldOfView = Mathf.MoveTowards(newCamera.fieldOfView, initFieldOfView, 100f * Time.deltaTime);
+            if (newCamera.fieldOfView > 59) {
+                SM.introZoomDone = true;
+            }
         }
     }
 }

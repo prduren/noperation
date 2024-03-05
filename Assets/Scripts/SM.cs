@@ -4,4 +4,5 @@ public static class SM {
     public static int textsToDisplayIterator = 0;
     public static bool beginGamePostIntro = false;
     public static bool FullScreenMode = true;
+    public static bool introZoomDone = false;
 }

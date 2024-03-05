@@ -33,7 +33,7 @@ public class TextLogic : MonoBehaviour
         //canvasText.text = displayText[SM.displayTextIterator];
         //canvasText.enabled = true;        
         //textBackgroundImage.enabled = true;
-        SM.displayTextIterator = SM.displayTextIterator + 1;
+        // SM.displayTextIterator = SM.displayTextIterator + 1;
     }
 
 }
