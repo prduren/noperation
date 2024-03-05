@@ -1191,7 +1191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01d56b00fff9f147ae45c75be46da2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charactersPerSecond: 20
+  charactersPerSecond: 15
   interpunctuationDelay: 0.5
   animator: {fileID: 1641777958}
   tvAnimSpriteRenderer: {fileID: 1641777959}
@@ -4842,7 +4842,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 1, z: 54.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4901,6 +4901,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1465346209}
   newCamera: {fileID: 963194227}
+  duration: 1
 --- !u!114 &963194231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5606,7 +5607,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1208338671
 Transform:
   m_ObjectHideFlags: 0
@@ -6728,7 +6729,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1465346208}
   m_LocalRotation: {x: -0, y: 0.20745695, z: -0, w: 0.9782442}
-  m_LocalPosition: {x: 5.7, y: 4, z: 11.1}
+  m_LocalPosition: {x: -22.89, y: 4, z: -70.72}
   m_LocalScale: {x: 5.050418, y: 1.6649852, z: 6.106871}
   m_ConstrainProportionsScale: 0
   m_Children: []

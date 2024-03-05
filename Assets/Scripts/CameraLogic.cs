@@ -48,7 +48,7 @@ public class CameraLogic : MonoBehaviour {
         
         // Simple control to allow the camera to be moved in and out using the up/down arrows.
         // transform.Translate(Input.GetAxis("Vertical") * Vector3.forward * Time.deltaTime * 28f);
-        if (newCamera.transform.position.z > -22f) {
+        if (newCamera.transform.position.z > -22f && SM.beginGamePostIntro) {
             transform.Translate(Vector3.back * Time.deltaTime * 28f);
         }
         if (newCamera.transform.position.z < -21f) {
