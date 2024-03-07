@@ -9,6 +9,7 @@ public class TraceObject : MonoBehaviour
     public GameObject objEndPoint;
     public GameObject objPlayerPoint;
     public float speed;
+    public GameObject traceObjParent;
     private float startTime;
     private float journeyLength;
     private bool hitObjEndPoint = false;
@@ -21,7 +22,6 @@ public class TraceObject : MonoBehaviour
         journeyLength = Vector3.Distance(objStartPoint.transform.position, objEndPoint.transform.position);
         shortWait = new WaitForSeconds(3 + Time.deltaTime);
         originalPos = transform.position;
-        
     }
 
     void Update()
@@ -43,6 +43,10 @@ public class TraceObject : MonoBehaviour
                     // reset stuff to prep for new puzzle and slide-in
                     transform.position = originalPos;
                     SM.beginNewPuzzle = false;
+                    // init puzzle
+                    // Transform currentPuzzle = this.transform.GetChild(SM.puzzleProgCounter);
+                    traceObjParent.transform.GetChild(SM.puzzleProgCounter).gameObject.SetActive(true);
+                    // currentPuzzle.parent.SetActive(true);
                     // set intro zoom to false for the first and only time otherwise we'll keep looping transform logic
                     SM.introZoomDone = false;
                     hitObjEndPoint = false;

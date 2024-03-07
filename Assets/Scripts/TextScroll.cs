@@ -125,8 +125,6 @@ using Object = UnityEngine.Object;
                         animator.speed = 0;
                         // enable TV blocker
                         tvAnimSpriteRenderer.enabled = false;
-                        SM.puzzleProgCounter++;
-
                     }
                     SM.textsToDisplayIterator = SM.textsToDisplayIterator + 1;
                     yield break;
