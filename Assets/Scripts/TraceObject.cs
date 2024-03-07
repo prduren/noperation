@@ -5,7 +5,6 @@ using UnityEngine;
 public class TraceObject : MonoBehaviour
 {
     public TextLogic TextLogic;
-    Vector3 originalPos;
     public GameObject objStartPoint;
     public GameObject objEndPoint;
     public GameObject objPlayerPoint;
@@ -14,12 +13,14 @@ public class TraceObject : MonoBehaviour
     private float journeyLength;
     private bool hitObjEndPoint = false;
     private WaitForSeconds shortWait;
+    private Vector3 originalPos;
 
     void Start()
     {
         startTime = Time.time;
         journeyLength = Vector3.Distance(objStartPoint.transform.position, objEndPoint.transform.position);
         shortWait = new WaitForSeconds(3 + Time.deltaTime);
+        originalPos = transform.position;
         
     }
 
@@ -27,7 +28,7 @@ public class TraceObject : MonoBehaviour
     {
         float distCovered = (Time.time - startTime) * speed;
         float fractionOfJourney = distCovered / journeyLength;
-        if (SM.introZoomDone) {
+        if (SM.introZoomDone || SM.beginNewPuzzle) {
             if (!hitObjEndPoint) {
                 transform.position = Vector3.Lerp(transform.position, objEndPoint.transform.position, fractionOfJourney);
             }
@@ -37,6 +38,15 @@ public class TraceObject : MonoBehaviour
                 // TextLogic.IntroTextDisplay();
                 // text box
                 transform.position = Vector3.Lerp(transform.position, objPlayerPoint.transform.position, 1f);
+                if ((Vector3.Distance(transform.position, objPlayerPoint.transform.position)) < .00004f) {
+                    Debug.Log("move back to OG pos");
+                    // reset stuff to prep for new puzzle and slide-in
+                    transform.position = originalPos;
+                    SM.beginNewPuzzle = false;
+                    // set intro zoom to false for the first and only time otherwise we'll keep looping transform logic
+                    SM.introZoomDone = false;
+                    hitObjEndPoint = false;
+                }
             }
         }
     }

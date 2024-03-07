@@ -9,6 +9,7 @@ public class CameraLogic : MonoBehaviour {
     private bool dzEnabled;
     private float initFieldOfView;
     public float duration = 1;
+    private bool initFOVReturnFlag = false;
     
 
     // Calculate the frustum height at a given distance from the camera.
@@ -54,9 +55,15 @@ public class CameraLogic : MonoBehaviour {
         if (newCamera.transform.position.z < -21f) {
             dzEnabled = false;
             newCamera.fieldOfView = Mathf.MoveTowards(newCamera.fieldOfView, initFieldOfView, 100f * Time.deltaTime);
-            if (newCamera.fieldOfView > 59) {
-                SM.introZoomDone = true;
-            }
+            if (newCamera.fieldOfView > 70) {
+                StartCoroutine(IntroZoomDone());
+            } 
         }
+    }
+
+    IEnumerator IntroZoomDone() {
+        yield return new WaitForSeconds(3);
+        SM.introZoomDone = true;
+        Debug.Log("my coroutine is done");
     }
 }

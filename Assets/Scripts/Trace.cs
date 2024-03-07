@@ -41,6 +41,10 @@ public class Trace : MonoBehaviour
             Debug.Log("end trace");
             SM.startObjTraceFlag = false;
             staticSound.Stop();
+            hit.transform.parent.gameObject.SetActive(false);            
+            SM.puzzleProgCounter++;
+            SM.beginNewPuzzle = true;
+            Debug.Log(SM.beginNewPuzzle);
         } else if (Physics.Raycast(ray, out hit) && !hit.transform.tag.Contains("obj") && SM.startObjTraceFlag) {
             Debug.Log("fail!");
         }

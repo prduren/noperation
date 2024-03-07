@@ -5,4 +5,6 @@ public static class SM {
     public static bool beginGamePostIntro = false;
     public static bool FullScreenMode = true;
     public static bool introZoomDone = false;
+    public static int puzzleProgCounter = 0;
+    public static bool beginNewPuzzle = false;
 }
