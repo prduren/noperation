@@ -10,6 +10,7 @@ public class TraceObject : MonoBehaviour
     public GameObject objPlayerPoint;
     public float speed;
     public GameObject traceObjParent;
+    public AudioSource introNoise;
     private float startTime;
     private float journeyLength;
     private bool hitObjEndPoint = false;
@@ -34,6 +35,7 @@ public class TraceObject : MonoBehaviour
             }
             // mess with the < x number for how long til player grabs note
             if ((Vector3.Distance(transform.position, objEndPoint.transform.position)) < .00004f) {
+                introNoise.Play(0);
                 hitObjEndPoint = true;
                 // TextLogic.IntroTextDisplay();
                 // text box

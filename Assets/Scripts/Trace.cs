@@ -13,12 +13,7 @@ public class Trace : MonoBehaviour
 
     void Start()
     {
-        objTraceList = GameObject.FindGameObjectsWithTag("objTrace");
-        foreach(GameObject obj in objTraceList) {
-            objTraceCounter = objTraceCounter + 1;
-        }
-        objTraceCounter = objTraceCounter + 1; // one more increment to make the distortion NOT 100% on the last objTrace (too loud)
-        amountToIncrementStatic = 1f / objTraceCounter;
+        
     }
 
     // Update is called once per frame
@@ -29,6 +24,7 @@ public class Trace : MonoBehaviour
         
         if (Physics.Raycast(ray, out hit) && hit.transform.tag == "objBegin") {
             Debug.Log("begin trace");
+            // GetDistortionLevel();
             SM.startObjTraceFlag = true;
             if (!staticSound.isPlaying) {
                 staticSound.Play(0);
@@ -36,7 +32,7 @@ public class Trace : MonoBehaviour
         } else if (Physics.Raycast(ray, out hit) && hit.transform.tag == "objTrace" && SM.startObjTraceFlag) {
             Destroy(hit.transform.gameObject);
             breakSound.Play(0);
-            staticSoundDistortion.distortionLevel = staticSoundDistortion.distortionLevel + amountToIncrementStatic;
+            //staticSoundDistortion.distortionLevel = staticSoundDistortion.distortionLevel + amountToIncrementStatic;
         } else if (Physics.Raycast(ray, out hit) && hit.transform.tag == "objEnd") {
             Debug.Log("end trace");
             SM.startObjTraceFlag = false;
@@ -44,10 +40,23 @@ public class Trace : MonoBehaviour
             hit.transform.parent.gameObject.SetActive(false);            
             SM.puzzleProgCounter++;
             SM.beginNewPuzzle = true;
+            // amountToIncrementStatic = 0;
             Debug.Log(SM.beginNewPuzzle);
         } else if (Physics.Raycast(ray, out hit) && !hit.transform.tag.Contains("obj") && SM.startObjTraceFlag) {
             Debug.Log("fail!");
         }
 
     }
+
+    /*
+    void GetDistortionLevel() {
+        objTraceList = GameObject.FindGameObjectsWithTag("objTrace");
+        foreach(GameObject obj in objTraceList) {
+            objTraceCounter = objTraceCounter + 1;
+        }
+        objTraceCounter = objTraceCounter + 1; // one more increment to make the distortion NOT 100% on the last objTrace (too loud)
+        amountToIncrementStatic = 1f / objTraceCounter;
+        Debug.Log(amountToIncrementStatic);
+    }
+    */
 }
