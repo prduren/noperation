@@ -7,4 +7,5 @@ public static class SM {
     public static bool introZoomDone = false;
     public static int puzzleProgCounter = 0;
     public static bool beginNewPuzzle = false;
+    public static bool introNoiseDone = false;
 }

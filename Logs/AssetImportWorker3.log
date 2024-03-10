@@ -1,0 +1,215 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.5f1 (40eb3a945986) revision 4254522'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'en' Physical Memory: 32699 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+P:\Unity\2021.3.5f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker3
+-projectPath
+P:/Unity/Projects/stencil
+-logFile
+Logs/AssetImportWorker3.log
+-srvPort
+50329
+Successfully changed project path to: P:/Unity/Projects/stencil
+P:/Unity/Projects/stencil
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 100.90 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.5f1 (40eb3a945986)
+[Subsystems] Discovering subsystems at path P:/Unity/2021.3.5f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path P:/Unity/Projects/stencil/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1070 (ID=0x1b81)
+    Vendor:   NVIDIA
+    VRAM:     8081 MB
+    Driver:   31.0.15.4601
+Initialize mono
+Mono path[0] = 'P:/Unity/2021.3.5f1/Editor/Data/Managed'
+Mono path[1] = 'P:/Unity/2021.3.5f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'P:/Unity/2021.3.5f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56416
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: P:/Unity/2021.3.5f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: P:/Unity/2021.3.5f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002599 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 82.71 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.806 seconds
+Domain Reload Profiling:
+	ReloadAssembly (807ms)
+		BeginReloadAssembly (63ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (546ms)
+			LoadAssemblies (62ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (227ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (23ms)
+			SetupLoadedEditorAssemblies (256ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (83ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (124ms)
+				ProcessInitializeOnLoadMethodAttributes (41ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.004480 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image P:\Unity\Projects\stencil\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image P:\Unity\Projects\stencil\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.77 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.942 seconds
+Domain Reload Profiling:
+	ReloadAssembly (943ms)
+		BeginReloadAssembly (91ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (18ms)
+		EndReloadAssembly (756ms)
+			LoadAssemblies (65ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (232ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (44ms)
+			SetupLoadedEditorAssemblies (378ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (77ms)
+				ProcessInitializeOnLoadAttributes (267ms)
+				ProcessInitializeOnLoadMethodAttributes (26ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.11 seconds
+Refreshing native plugins compatible for Editor in 1.32 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3562 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 39 unused Assets / (1.3 MB). Loaded Objects now: 4011.
+Memory consumption went from 207.0 MB to 205.6 MB.
+Total: 3.962600 ms (FindLiveObjects: 0.364700 ms CreateObjectMapping: 0.124000 ms MarkObjects: 3.017500 ms  DeleteObjects: 0.454700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 150714.494520 seconds.
+  path: Assets/Art Gallery Vol.6 - modular museum/Models/Prefabs/Ceiling_Rounded_Cap.prefab
+  artifactKey: Guid(a7545a66e61db7c44ace7bd42860d91d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art Gallery Vol.6 - modular museum/Models/Prefabs/Ceiling_Rounded_Cap.prefab using Guid(a7545a66e61db7c44ace7bd42860d91d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e29856d655b87f4f49eeea7ee923485b') in 0.253992 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Art Gallery Vol.6 - modular museum/Models/Prefabs/Painting_V_2.prefab
+  artifactKey: Guid(00503cdbd927f76499eba3315f43b316) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art Gallery Vol.6 - modular museum/Models/Prefabs/Painting_V_2.prefab using Guid(00503cdbd927f76499eba3315f43b316) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '746ffd2a8620f1cef4a64757136e204c') in 0.004833 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Art Gallery Vol.6 - modular museum/Models/Prefabs/Painting_H_3.prefab
+  artifactKey: Guid(a2bdfed76b38dfc4fb1c3ee7473786ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art Gallery Vol.6 - modular museum/Models/Prefabs/Painting_H_3.prefab using Guid(a2bdfed76b38dfc4fb1c3ee7473786ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b67e588bc9b71647cd4ebcbc5bcaa1fe') in 0.004316 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Art Gallery Vol.6 - modular museum/Models/Prefabs/Wall_Tall_Tile_1m.prefab
+  artifactKey: Guid(ba2eac40b2fa19048bff3e3b08310833) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art Gallery Vol.6 - modular museum/Models/Prefabs/Wall_Tall_Tile_1m.prefab using Guid(ba2eac40b2fa19048bff3e3b08310833) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '617f60515fed3f6c5b7665e0f931bc1f') in 0.063458 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Art Gallery Vol.6 - modular museum/Models/Prefabs/Rope_fence_3.prefab
+  artifactKey: Guid(df94871fc450cdf4d9d35b6df5f725c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art Gallery Vol.6 - modular museum/Models/Prefabs/Rope_fence_3.prefab using Guid(df94871fc450cdf4d9d35b6df5f725c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '628cb814537650408967db91eb4f7cf6') in 0.012627 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Art Gallery Vol.6 - modular museum/Models/Prefabs/Painting Vertical 3.prefab
+  artifactKey: Guid(f17c2f3877682484aa82c5b25dfd0d36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art Gallery Vol.6 - modular museum/Models/Prefabs/Painting Vertical 3.prefab using Guid(f17c2f3877682484aa82c5b25dfd0d36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56e1abec2ba948e4948865929174f988') in 0.011846 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Art Gallery Vol.6 - modular museum/Models/Prefabs/Rack.prefab
+  artifactKey: Guid(b371802ddbb87e84f8323011cb6d3f65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art Gallery Vol.6 - modular museum/Models/Prefabs/Rack.prefab using Guid(b371802ddbb87e84f8323011cb6d3f65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b63b45a47598046a99b183ca8d656fa') in 0.005126 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Art Gallery Vol.6 - modular museum/Models/Prefabs/SM_Sofa_Straight.prefab
+  artifactKey: Guid(43a0f6124a8acc249a46985477df379a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art Gallery Vol.6 - modular museum/Models/Prefabs/SM_Sofa_Straight.prefab using Guid(43a0f6124a8acc249a46985477df379a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '939b89153d85660f25668e215bbcf503') in 0.086681 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

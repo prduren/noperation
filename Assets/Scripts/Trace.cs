@@ -7,14 +7,9 @@ public class Trace : MonoBehaviour
     public AudioSource breakSound;
     public AudioSource staticSound;
     private GameObject[] objTraceList;
-    private int objTraceCounter = 0;
+    // private int objTraceCounter = 0;
     private float amountToIncrementStatic;
     public AudioDistortionFilter staticSoundDistortion;
-
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

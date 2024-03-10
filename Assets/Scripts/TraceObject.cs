@@ -35,20 +35,20 @@ public class TraceObject : MonoBehaviour
             }
             // mess with the < x number for how long til player grabs note
             if ((Vector3.Distance(transform.position, objEndPoint.transform.position)) < .00004f) {
-                introNoise.Play(0);
+                if (!SM.introNoiseDone) {
+                    introNoise.Play(0);
+                    SM.introNoiseDone = true;
+                }
                 hitObjEndPoint = true;
                 // TextLogic.IntroTextDisplay();
                 // text box
                 transform.position = Vector3.Lerp(transform.position, objPlayerPoint.transform.position, 1f);
                 if ((Vector3.Distance(transform.position, objPlayerPoint.transform.position)) < .00004f) {
-                    Debug.Log("move back to OG pos");
                     // reset stuff to prep for new puzzle and slide-in
                     transform.position = originalPos;
                     SM.beginNewPuzzle = false;
                     // init puzzle
-                    // Transform currentPuzzle = this.transform.GetChild(SM.puzzleProgCounter);
                     traceObjParent.transform.GetChild(SM.puzzleProgCounter).gameObject.SetActive(true);
-                    // currentPuzzle.parent.SetActive(true);
                     // set intro zoom to false for the first and only time otherwise we'll keep looping transform logic
                     SM.introZoomDone = false;
                     hitObjEndPoint = false;
