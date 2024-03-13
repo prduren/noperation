@@ -11,6 +11,7 @@ public class Trace : MonoBehaviour
     private float amountToIncrementStatic;
     public AudioDistortionFilter staticSoundDistortion;
     public Suspicion Suspicion;
+    public GameObject navButtons;
 
     // Update is called once per frame
     void Update()
@@ -30,15 +31,17 @@ public class Trace : MonoBehaviour
             hit.transform.gameObject.SetActive(false);
             breakSound.Play(0);
             //staticSoundDistortion.distortionLevel = staticSoundDistortion.distortionLevel + amountToIncrementStatic;
-        } else if (Physics.Raycast(ray, out hit) && hit.transform.tag == "objEnd") {
+        } else if (Physics.Raycast(ray, out hit) && hit.transform.tag == "objEnd" && SM.startObjTraceFlag) {
             Debug.Log("end trace");
             SM.startObjTraceFlag = false;
             staticSound.Stop();
             hit.transform.parent.gameObject.SetActive(false);            
             SM.puzzleProgCounter++;
+            if (SM.puzzleProgCounter == 5) {
+                SM.dayOneComplete = true;
+            }
             SM.beginNewPuzzle = true;
             // amountToIncrementStatic = 0;
-            Debug.Log(SM.beginNewPuzzle);
         } else if (Physics.Raycast(ray, out hit) && !hit.transform.tag.Contains("obj") && SM.startObjTraceFlag) {
             Suspicion.SuspicionHandler();
             foreach (Transform child in hit.transform.parent.transform) {
@@ -46,6 +49,14 @@ public class Trace : MonoBehaviour
             }
             SM.startObjTraceFlag = false;
         }
+
+        if (SM.dayOneComplete) {
+            navButtons.SetActive(true);
+            transform.gameObject.SetActive(false);
+        }
+
+        // we're done doing traces, completed all 5 and continuing forward
+        
 
     }
 
