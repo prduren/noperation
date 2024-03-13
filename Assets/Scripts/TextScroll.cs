@@ -9,12 +9,25 @@ using Object = UnityEngine.Object;
     public class TextScroll : MonoBehaviour
     {
 
+// FINAL TEXTS
+/*
         string[] textsToDisplay = {
             "Good evening and good luck, as always.",
             "Tonight, we've been made aware of explosions coming from various dwellings.",
             "The source is unknown.",
             "Stay tuned for any additional potential findings.",
             "", 
+        };
+*/
+
+// DEBUG TEXTS
+        string[] textsToDisplay = {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
         };
 
         private TMP_Text _textBox;

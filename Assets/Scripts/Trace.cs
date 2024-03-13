@@ -10,6 +10,7 @@ public class Trace : MonoBehaviour
     // private int objTraceCounter = 0;
     private float amountToIncrementStatic;
     public AudioDistortionFilter staticSoundDistortion;
+    public Suspicion Suspicion;
 
     // Update is called once per frame
     void Update()
@@ -38,7 +39,10 @@ public class Trace : MonoBehaviour
             // amountToIncrementStatic = 0;
             Debug.Log(SM.beginNewPuzzle);
         } else if (Physics.Raycast(ray, out hit) && !hit.transform.tag.Contains("obj") && SM.startObjTraceFlag) {
-            Debug.Log("fail!");
+            Suspicion.SuspicionHandler();
+            Debug.Log("fail! " + SM.suspicionIncrementer);
+            
+            SM.startObjTraceFlag = false;
         }
 
     }

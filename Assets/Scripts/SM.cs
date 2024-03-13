@@ -8,4 +8,5 @@ public static class SM {
     public static int puzzleProgCounter = 0;
     public static bool beginNewPuzzle = false;
     public static bool introNoiseDone = false;
+    public static int suspicionIncrementer = 0;
 }
