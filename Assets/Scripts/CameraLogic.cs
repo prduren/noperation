@@ -9,7 +9,7 @@ public class CameraLogic : MonoBehaviour {
     private bool dzEnabled;
     private float initFieldOfView;
     public float duration = 1;
-    private bool initFOVReturnFlag = false;
+    // private bool initFOVReturnFlag = false;
     public Vector3 paintingCameraLoc;
     public Quaternion paintingCameraRot;
     public Vector3 kitchenCameraLoc;
@@ -62,7 +62,7 @@ public class CameraLogic : MonoBehaviour {
         
         // Simple control to allow the camera to be moved in and out using the up/down arrows.
         // transform.Translate(Input.GetAxis("Vertical") * Vector3.forward * Time.deltaTime * 28f);
-        
+
         if (newCamera.transform.position.z < -21f) {
             dzEnabled = false;
             newCamera.fieldOfView = Mathf.MoveTowards(newCamera.fieldOfView, initFieldOfView, 100f * Time.deltaTime);

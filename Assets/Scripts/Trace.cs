@@ -26,7 +26,8 @@ public class Trace : MonoBehaviour
                 staticSound.Play(0);
             }
         } else if (Physics.Raycast(ray, out hit) && hit.transform.tag == "objTrace" && SM.startObjTraceFlag) {
-            Destroy(hit.transform.gameObject);
+            // Destroy(hit.transform.gameObject);
+            hit.transform.gameObject.SetActive(false);
             breakSound.Play(0);
             //staticSoundDistortion.distortionLevel = staticSoundDistortion.distortionLevel + amountToIncrementStatic;
         } else if (Physics.Raycast(ray, out hit) && hit.transform.tag == "objEnd") {
@@ -40,8 +41,9 @@ public class Trace : MonoBehaviour
             Debug.Log(SM.beginNewPuzzle);
         } else if (Physics.Raycast(ray, out hit) && !hit.transform.tag.Contains("obj") && SM.startObjTraceFlag) {
             Suspicion.SuspicionHandler();
-            Debug.Log("fail! " + SM.suspicionIncrementer);
-            
+            foreach (Transform child in hit.transform.parent.transform) {
+                child.gameObject.SetActive(true);
+            }
             SM.startObjTraceFlag = false;
         }
 
