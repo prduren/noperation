@@ -5,7 +5,7 @@ public static class SM {
     public static bool beginGamePostIntro = false;
     public static bool FullScreenMode = true;
     public static bool introZoomDone = false;
-    public static int puzzleProgCounter = 0;
+    public static int puzzleProgCounter = 5;
     public static bool beginNewPuzzle = false;
     public static bool introNoiseDone = false;
     public static int suspicionIncrementer = 0;
